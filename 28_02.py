@@ -11,7 +11,7 @@ logs = [
 def parse_log_line(line: str) -> Dict[str, Any]:
 
     parts = line.split("|")
-    date = parts[0]
+    date = parts[0] #проверку бы добавить на длину списка, чтобы избежать out of range
     level = parts[1]
     message = parts[2]
 
@@ -33,7 +33,7 @@ def parse_log_line(line: str) -> Dict[str, Any]:
             pass
         data[key] = value
 
-    data["date"] = date
+    data["date"] = date # к словарям бы обращаться через get()
     data["level"] = level
     return data
 
