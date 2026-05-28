@@ -1,0 +1,302 @@
+[
+  {
+    "title": "microsoft-teams-graph 2.0.12",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T23:04:48Z",
+    "author": "TeamsAISDKFeedback@microsoft.com"
+  },
+  {
+    "title": "microsoft-teams-common 2.0.12",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T23:04:47Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "microsoft-teams-cards 2.0.12",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T23:04:46Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "microsoft-teams-botbuilder 2.0.12",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T23:04:45Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "microsoft-teams-apps 2.0.12",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T23:04:44Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "microsoft-teams-api 2.0.12",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T23:04:42Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "Mark Zuckerberg says a Meta cloud computing business 'definitely on the table'",
+    "source": "CNBC",
+    "publishedat": "2026-05-27T23:04:19Z",
+    "author": "Jonathan Vanian"
+  },
+  {
+    "title": "Despite GTA 6 release date confidence, Take-Two Interactive stock keeps falling",
+    "source": "Notebookcheck.net",
+    "publishedat": "2026-05-27T23:04:00Z",
+    "author": "Adam Corsetti"
+  },
+  {
+    "title": "New iPhone Feature Could Lock Devices If They’re Snatched",
+    "source": "redmondpie.com",
+    "publishedat": "2026-05-27T22:40:28Z",
+    "author": "Oliver Haslam"
+  },
+  {
+    "title": "What Are The Ultimate iOS Gaming Updates For 2026",
+    "source": "redmondpie.com",
+    "publishedat": "2026-05-27T22:28:58Z",
+    "author": "RP Staff"
+  },
+  {
+    "title": "Best SEO API In 2026: Which One Should You Actually Use?",
+    "source": "redmondpie.com",
+    "publishedat": "2026-05-27T22:20:09Z",
+    "author": "RP Staff"
+  },
+  {
+    "title": "ol-sdk added to PyPI",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T22:18:03Z",
+    "author": "support@oxfordledge.com"
+  },
+  {
+    "title": "Wall Street hedges against Big Tech as CDS activity surges to record levels",
+    "source": "Crypto Briefing",
+    "publishedat": "2026-05-27T22:14:25Z",
+    "author": "Editorial Team"
+  },
+  {
+    "title": "Wall Street hedges against Big Tech as CDS activity surges to $12.5B",
+    "source": "Crypto Briefing",
+    "publishedat": "2026-05-27T22:06:40Z",
+    "author": "Editorial Team"
+  },
+  {
+    "title": "LinkedIn Is Done Hosting Content Nobody Wrote",
+    "source": "pymnts.com",
+    "publishedat": "2026-05-27T22:04:04Z",
+    "author": "PYMNTS"
+  },
+  {
+    "title": "Opinion: With A $949 Steam Deck, The Steam Machine Will Probably Be Very Expensive",
+    "source": "IGN",
+    "publishedat": "2026-05-27T22:03:12Z",
+    "author": "Jacqueline Thomas"
+  },
+  {
+    "title": "DMeta 0.5",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T22:02:01Z",
+    "author": "dmeta@openscilab.com"
+  },
+  {
+    "title": "microsoft-opentelemetry 1.3.0",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T21:55:51Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "pyfabric 0.1.4",
+    "source": "Pypi.org",
+    "publishedat": "2026-05-27T21:51:38Z",
+    "author": "20804442+hughdecatte@users.noreply.github.com"
+  },
+  {
+    "title": "New TeamViewer remote assistance connector in Microsoft Intune: setup, requirements, and limitations",
+    "source": "4sysops.com",
+    "publishedat": "2026-05-27T21:46:08Z",
+    "author": "IT Experts"
+  },
+  {
+    "title": "Cyber attackers are hijacking Microsoft Outlook, Teams and 365 log-ins, FBI says",
+    "source": "Yahoo Entertainment",
+    "publishedat": "2026-05-27T21:34:16Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "GPU mining malware spreads via SEO poisoning, AI chatbots",
+    "source": "BleepingComputer",
+    "publishedat": "2026-05-27T21:31:25Z",
+    "author": "Ionut Ilascu"
+  },
+  {
+    "title": "Pentagon awards Microsoft $9.7 billion deal in bid to cut costs, end license sprawl",
+    "source": "CNA",
+    "publishedat": "2026-05-27T21:24:21Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "Dell wins a $9.7 billion Pentagon software deal after cozying up to Trump",
+    "source": "CNBC",
+    "publishedat": "2026-05-27T21:15:01Z",
+    "author": "Garrett Downs"
+  },
+  {
+    "title": "Reconstructing an Akira Ransomware Kill Chain from Perimeter and Endpoint Logs, (Wed, May 27th)",
+    "source": "Sans.edu",
+    "publishedat": "2026-05-27T21:14:03Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "Qumulo and Cisco Pitch GPU Liquidity With Updated Cloud AI Accelerator",
+    "source": "Storagereview.com",
+    "publishedat": "2026-05-27T21:09:23Z",
+    "author": "Harold Fritts"
+  },
+  {
+    "title": "Meta Shares Jump After Company Announces Premium Subscriptions For Facebook And Instagram",
+    "source": "Forbes",
+    "publishedat": "2026-05-27T21:04:49Z",
+    "author": "Antonio Pequeño IV, Forbes Staff, \n Antonio Pequeño IV, Forbes Staff\n https://www.forbes.com/sites/antoniopequenoiv/"
+  },
+  {
+    "title": "Rust Will Save Linux From AI, Says Greg Kroah-Hartman",
+    "source": "Slashdot.org",
+    "publishedat": "2026-05-27T21:00:00Z",
+    "author": "BeauHD"
+  },
+  {
+    "title": "AI costs begin to bite as agents may increase token demand by 24 times, says Goldman Sachs report — Uber and Microsoft among companies feeling the bite of tokenized billing",
+    "source": "Tom's Hardware UK",
+    "publishedat": "2026-05-27T20:52:46Z",
+    "author": "Jon Martindale"
+  },
+  {
+    "title": "Stocks are rallying despite the Iran war and stubborn inflation. Here's why.",
+    "source": "CBS News",
+    "publishedat": "2026-05-27T20:37:20Z",
+    "author": "Aimee  Picchi"
+  },
+  {
+    "title": "The emerging AI content licensing market puts news publishers in a “double bind,” a new report warns",
+    "source": "Niemanlab.org",
+    "publishedat": "2026-05-27T20:35:02Z",
+    "author": "Andrew Deck"
+  },
+  {
+    "title": "Your Windows apps don't need to be installed — here's why portable apps are the better way",
+    "source": "XDA Developers",
+    "publishedat": "2026-05-27T20:30:22Z",
+    "author": "João Carrasqueira"
+  },
+  {
+    "title": "4 Start menu changes are coming to Windows 11, and they will shape how you use your PC",
+    "source": "Windows Central",
+    "publishedat": "2026-05-27T20:27:11Z",
+    "author": "mhuck@live.com (Mauro Huculak) , Mauro Huculak"
+  },
+  {
+    "title": "The AI Bubble",
+    "source": "Nooneshappy.com",
+    "publishedat": "2026-05-27T20:23:56Z",
+    "author": "Andy Baio"
+  },
+  {
+    "title": "Snowflake soars 30% on earnings beat and plan to spend $6 billion on Amazon cloud",
+    "source": "CNBC",
+    "publishedat": "2026-05-27T20:22:48Z",
+    "author": "Jordan Novet, Katie Tarasov"
+  },
+  {
+    "title": "Lenovo Legion 5i Ultra 7 15.1\" Laptop w/ NVIDIA GeForce RTX 5060, MS Bundle, Game for $1,299 + free shipping",
+    "source": "Dealnews.com",
+    "publishedat": "2026-05-27T20:21:56Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "In a sea of hype, here are the AI ‘nothingburgers’ you don’t hear about",
+    "source": "The Conversation Africa",
+    "publishedat": "2026-05-27T20:14:01Z",
+    "author": "Daswin De Silva, Professor of AI and Analytics, Co-Director of AI Institute, La Trobe University"
+  },
+  {
+    "title": "Securing Your Laravel Packages with Laravel Moat",
+    "source": "Peterfox.me",
+    "publishedat": "2026-05-27T20:13:49Z",
+    "author": "Peter Fox"
+  },
+  {
+    "title": "Apple shares hit new all-time intraday and closing highs",
+    "source": "Macdailynews.com",
+    "publishedat": "2026-05-27T20:11:40Z",
+    "author": "MacDailyNews"
+  },
+  {
+    "title": "Wizards of the Coast writes to staff to explain \"how union representation works\" as studio prepares to vote to unionize",
+    "source": "GamesIndustry.biz",
+    "publishedat": "2026-05-27T20:02:54Z",
+    "author": "Vikki Blake"
+  },
+  {
+    "title": "Lenovo LOQ 17 13th-Gen i5 17.3\" Laptop w/ GeForce RTX 5050, MS Bundle for $799 + free shipping",
+    "source": "Dealnews.com",
+    "publishedat": "2026-05-27T20:02:10Z",
+    "author": "Unknown"
+  },
+  {
+    "title": "Cognition just raised $1 billion at a $26 billion valuation, and 90% of its own code is written by its AI",
+    "source": "The Next Web",
+    "publishedat": "2026-05-27T20:00:33Z",
+    "author": "Cristian Dina"
+  },
+  {
+    "title": "After you upload your data to the cloud, where does it go? The challenge of dual-use technologies",
+    "source": "The Conversation Africa",
+    "publishedat": "2026-05-27T19:53:59Z",
+    "author": "Bryn Williams-Jones, Professor of Bioethics and Director of the Department of Social and Preventive Medicine, École de santé publique, Université de Montréal"
+  },
+  {
+    "title": "What’s New for C++ Developers in Visual Studio 2026 (18.1 – 18.6)",
+    "source": "Microsoft.com",
+    "publishedat": "2026-05-27T19:51:16Z",
+    "author": "Augustin Popa"
+  },
+  {
+    "title": "Sierra Club sues Imperial County over approval of massive data center complex",
+    "source": "KPBS",
+    "publishedat": "2026-05-27T19:48:15Z",
+    "author": "Kori Suzuki"
+  },
+  {
+    "title": "Anker Nano 45W Charger Protects Your iPhone Battery Health, 30% Off Today",
+    "source": "redmondpie.com",
+    "publishedat": "2026-05-27T19:40:07Z",
+    "author": "Oliver Haslam"
+  },
+  {
+    "title": "Activision shareholders reach $250 million settlement over Microsoft buyout",
+    "source": "Livemint",
+    "publishedat": "2026-05-27T19:37:31Z",
+    "author": "list.metadata.agency"
+  },
+  {
+    "title": "Micron Technology hits $1T market cap after record rally",
+    "source": "Crypto Briefing",
+    "publishedat": "2026-05-27T19:36:36Z",
+    "author": "Editorial Team"
+  },
+  {
+    "title": "Experience Premium Android And Save $250 Off This Google Pixel 10 Pro",
+    "source": "redmondpie.com",
+    "publishedat": "2026-05-27T19:33:17Z",
+    "author": "Oliver Haslam"
+  },
+  {
+    "title": "Anthropic strengthens India team, appoints Sangeeta Bavi to lead startups",
+    "source": "The Times of India",
+    "publishedat": "2026-05-27T19:29:34Z",
+    "author": "ETtech"
+  }
+]
