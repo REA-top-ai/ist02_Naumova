@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Нутри-Помощник</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5efe7; padding: 20px; }
+        .container { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 20px; }
+        button, input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 30px; border: 1px solid #ddd; }
+        button { background: #d9c7b1; cursor: pointer; font-weight: bold; }
+        .meal-buttons { display: flex; gap: 10px; margin: 15px 0; }
+        .meal-btn { flex: 1; text-align: center; background: #eee; padding: 10px; border-radius: 30px; cursor: pointer; }
+        .meal-btn.active { background: #d9c7b1; font-weight: bold; }
+        .suggestion { background: #f9f6f0; padding: 12px; margin: 8px 0; border-radius: 12px; cursor: pointer; }
+        .food-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .delete-btn { background: #c98a7a; color: white; border: none; width: auto; padding: 5px 12px; margin: 0; border-radius: 20px; cursor: pointer; }
+        .delete-btn:hover { background: #a55a4a; }
+        .meal-section { margin-top: 20px; padding: 15px; background: #fefcf8; border-radius: 15px; }
+        .total { text-align: right; font-weight: bold; margin-top: 10px; padding-top: 5px; border-top: 1px solid #ddd; }
+        .advice-box { background: #f1ede8; padding: 20px; border-radius: 15px; margin-top: 20px; white-space: pre-wrap; max-height: 500px; overflow-y: auto; }
+        .profile-panel { background: #f9f6f0; padding: 15px; border-radius: 15px; margin-bottom: 20px; }
+        .row-2 { display: flex; gap: 10px; }
+        .row-2 > div { flex: 1; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align:center;">Нутри-Помощник</h1>
+    <div id="loginPanel" style="text-align:center;"><button id="googleBtn" onclick="window.location.href='/google/login'">Войти с Google</button></div>
+    <div id="appContent" style="display:none;">
+        <p id="userInfo"></p>
+        <button id="editProfileBtn" style="background:#e8ddd0; margin-bottom:15px;">Редактировать профиль</button>
+        <div id="profilePanel" class="profile-panel">
+            <input type="text" id="userName" placeholder="Ваше имя">
+            <div class="row-2"><div><input type="number" id="currentWeight" placeholder="Вес (кг)"></div><div><input type="number" id="targetWeight" placeholder="Целевой вес (кг)"></div></div>
+            <div class="row-2"><div><input type="number" id="userAge" placeholder="Возраст"></div><div><input type="number" id="userHeight" placeholder="Рост (см)"></div></div>
+            <button id="saveProfileBtn">Сохранить</button>
+        </div>
+        <div class="meal-buttons"><div class="meal-btn active" data-meal="breakfast">Завтрак</div><div class="meal-btn" data-meal="lunch">Обед</div><div class="meal-btn" data-meal="dinner">Ужин</div></div>
+        <input type="text" id="searchInput" placeholder="Например: курица, гречка">
+        <button id="searchBtn">Найти БЖУ</button>
+        <div id="searchResults"></div>
+        <div id="breakfastSection" class="meal-section"><h3>Завтрак</h3><div id="breakfastList"></div><div id="breakfastTotal" class="total"></div></div>
+        <div id="lunchSection" class="meal-section"><h3>Обед</h3><div id="lunchList"></div><div id="lunchTotal" class="total"></div></div>
+        <div id="dinnerSection" class="meal-section"><h3>Ужин</h3><div id="dinnerList"></div><div id="dinnerTotal" class="total"></div></div>
+        <button id="adviceBtn">Совет от Mistral</button>
+        <div id="adviceBox" class="advice-box"></div>
+    </div>
+</div>
+<script>
+    let currentMeal = 'breakfast';
+    document.querySelectorAll('.meal-btn').forEach(btn => btn.addEventListener('click', () => {
+        document.querySelectorAll('.meal-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentMeal = btn.dataset.meal;
+    }));
+    async function apiCall(url, method, body) {
+        let res = await fetch(url, {method, headers:{'Content-Type':'application/json'}, credentials:'include', body:body?JSON.stringify(body):undefined});
+        return res.json();
+    }
+    document.getElementById('googleBtn').addEventListener('click', () => window.location.href='/google/login');
+    document.getElementById('editProfileBtn')?.addEventListener('click', () => document.getElementById('profilePanel').style.display='block');
+    async function checkAuth() {
+        let data = await apiCall('/api/me','GET');
+        if(data.authenticated){
+            document.getElementById('loginPanel').style.display='none';
+            document.getElementById('appContent').style.display='block';
+            document.getElementById('userInfo').innerHTML='Здравствуйте, '+ (data.name||data.email);
+            if(data.has_profile){
+                document.getElementById('userName').value=data.name||'';
+                document.getElementById('currentWeight').value=data.current_weight||'';
+                document.getElementById('targetWeight').value=data.target_weight||'';
+                document.getElementById('userAge').value=data.age||'';
+                document.getElementById('userHeight').value=data.height||'';
+                document.getElementById('profilePanel').style.display='none';
+            } else document.getElementById('profilePanel').style.display='block';
+            loadMeals();
+        }
+    }
+    document.getElementById('saveProfileBtn')?.addEventListener('click', async()=>{
+        let name=document.getElementById('userName').value;
+        let w=parseFloat(document.getElementById('currentWeight').value);
+        let tw=parseFloat(document.getElementById('targetWeight').value);
+        let a=parseInt(document.getElementById('userAge').value);
+        let h=parseInt(document.getElementById('userHeight').value);
+        if(!name||!w||!tw||!a||!h) return alert('Заполните все поля');
+        await apiCall('/api/set_profile','POST',{name, current_weight:w, target_weight:tw, age:a, height:h});
+        alert('Профиль сохранён');
+        document.getElementById('profilePanel').style.display='none';
+        document.getElementById('userInfo').innerHTML='Здравствуйте, '+name;
+        loadMeals();
+    });
+    document.getElementById('searchBtn')?.addEventListener('click', async()=>{
+        let q=document.getElementById('searchInput').value;
+        if(!q) return alert('Введите блюдо');
+        document.getElementById('searchResults').innerHTML='Поиск...';
+        let data=await apiCall('/api/search','POST',{query:q});
+        if(data.results?.length){
+            let html='';
+            data.results.forEach(i=>html+=`<div class="suggestion" onclick="addMeal('${i.name.replace(/'/g,"\\'")}',${i.calories})">${i.name} - ${i.calories} ккал</div>`);
+            document.getElementById('searchResults').innerHTML=html;
+        } else document.getElementById('searchResults').innerHTML='Ничего не найдено';
+    });
+    window.addMeal=async(name,calories)=>{
+        await apiCall('/api/add_meal','POST',{food_name:name, calories, meal_type:currentMeal});
+        document.getElementById('searchInput').value='';
+        document.getElementById('searchResults').innerHTML='';
+        loadMeals();
+    };
+    window.deleteMeal=async(id)=>{
+        await apiCall('/api/delete_meal','POST',{meal_id:id});
+        loadMeals();
+    };
+    async function loadMeals(){
+        let data=await apiCall('/api/get_meals','GET');
+        let meals=data.meals||[];
+        let breakfast=[], lunch=[], dinner=[];
+        meals.forEach(m=>{if(m.meal_type==='breakfast') breakfast.push(m); else if(m.meal_type==='lunch') lunch.push(m); else if(m.meal_type==='dinner') dinner.push(m);});
+        function render(container, items){
+            let div=document.getElementById(container);
+            if(!items.length){div.innerHTML='Пусто'; return;}
+            div.innerHTML=items.map(m=>`<div class="food-item"><span>${m.food_name} - ${m.calories} ккал</span><button class="delete-btn" onclick="deleteMeal(${m.id})">Удалить</button></div>`).join('');
+        }
+        render('breakfastList',breakfast);
+        render('lunchList',lunch);
+        render('dinnerList',dinner);
+        let bt=breakfast.reduce((s,m)=>s+m.calories,0);
+        let lt=lunch.reduce((s,m)=>s+m.calories,0);
+        let dt=dinner.reduce((s,m)=>s+m.calories,0);
+        document.getElementById('breakfastTotal').innerHTML=`Итого: ${bt} ккал`;
+        document.getElementById('lunchTotal').innerHTML=`Итого: ${lt} ккал`;
+        document.getElementById('dinnerTotal').innerHTML=`Итого: ${dt} ккал`;
+    }
+    document.getElementById('adviceBtn')?.addEventListener('click', async()=>{
+        let btn=document.getElementById('adviceBtn');
+        btn.innerText='Анализирую...';
+        let data=await apiCall('/api/advice','GET');
+        document.getElementById('adviceBox').innerHTML=data.advice;
+        btn.innerText='Совет от Mistral';
+    });
+    checkAuth();
+</script>
+</body>
+</html>
